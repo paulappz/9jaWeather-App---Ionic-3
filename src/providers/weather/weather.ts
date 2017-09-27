@@ -15,6 +15,11 @@ export class WeatherProvider {
   getWeather(city, state){
     return this.http.get(this.url+'/'+state+'/'+city+'.json')
       .map(res => res.json());
+
   }
 
 }
+
+
+//http://dataservice.accuweather.com/locations/v1/adminareas/NGR001?apikey=J2ui6WoCFXUkLUK7SVdXrb0iJKQnEbrs
+//api.wunderground.com/api/99dfe35fcb7de1ee/conditions/q/washington/dc.json

@@ -6,35 +6,30 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Settings</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Settings</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-col width-100>
-        <ion-list>
-          <form (ngSubmit)="saveForm()">
-            <ion-item>
-              <ion-label fixed>
-                City
-              </ion-label>
-              <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label fixed>
-                State
-              </ion-label>
-              <ion-input [(ngModel)]="state" name="state" type="text"></ion-input>
-            </ion-item>
-            <button ion-button type="submit" block>Save Changes</button>
-          </form>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content padding style="background-color:#e6ffe6">
+    <ion-grid>
+        <ion-row>
+            <ion-col width-100>
+                <ion-list>
+                    <form (ngSubmit)="saveForm()">
+                        <ion-item>
+                            <ion-label fixed>
+                                Nigerian City
+                            </ion-label>
+                            <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+                        </ion-item>
+                        <button color="naija" ion-button type="submit" outline round block>Save Changes</button>
+                    </form>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>

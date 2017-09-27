@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component ,NgZone} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 
 @IonicPage()
@@ -10,22 +10,19 @@ import { HomePage } from '../home/home';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-  city:string;
-  state:string;
+  city: string;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    private storage:Storage) {
+    private storage:Storage, public zone: NgZone ) {
 
-      this.storage.get('location').then((val) => {
+      this.storage.get('location_params').then((val) => {
         if(val != null){
-          let location = JSON.parse(val);
-          this.city = location.city;
-          this.state = location.state;
+           let location_params = JSON.parse(val);
+          this.city = location_params.city;
         } else {
-          this.city = 'Miami';
-          this.state = 'FL';
+          this.city = 'Ikorodu';
         }
       });
   }
@@ -35,12 +32,13 @@ export class SettingsPage {
   }
 
   saveForm(){
-    let location = {
-      city: this.city,
-      state: this.state
+    let location_params = {
+      city: this.city
     }
-    this.storage.set('location', JSON.stringify(location));
-    this.navCtrl.push(HomePage);
+     this.zone.run(() => {
+    this.storage.set('location_params', JSON.stringify(location_params));
+     })
+  this.navCtrl.setRoot(TabsPage);
   }
 
 }

@@ -15,27 +15,13 @@ export class HomePage {
   }
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     private weatherProvider:WeatherProvider,
     private storage:Storage) {
 
   }
 
-  ionViewWillEnter(){
-    this.storage.get('location').then((val) => {
-      if(val != null){
-        this.location = JSON.parse(val);
-      } else {
-        this.location = {
-          city: 'Miami',
-          state: 'FL'
-        }
-      }
+   ionViewWillEnter(){
 
-      this.weatherProvider.getWeather(this.location.city, this.location.state)  .subscribe(weather => {
-          this.weather = weather.current_observation;
-        });
-    });
-  }
-
+   }
 }

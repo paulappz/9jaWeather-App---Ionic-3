@@ -1,4 +1,4 @@
-# iWeather Ionic 3 Weather App
+# 9jaWeather Ionic 3 Weather App
 
 This is an Ionic 3 application that uses the wunderground api to report weather and stores location info in Ionic storage
 

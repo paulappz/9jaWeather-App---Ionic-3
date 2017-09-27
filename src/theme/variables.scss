@@ -1,28 +1,16 @@
 $font-path: "../assets/fonts";
 $app-direction: ltr;
-
 @import "ionic.globals";
-
-$colors: (
-  primary:    #6495ed,
-  secondary:  #435d8c,
-  danger:     #f53d3d,
-  light:      #ffffff,
-  dark:       #222
-);
-
+$colors: ( primary: #6495ed, secondary: #435d8c, danger: #f53d3d, light: #ffffff, dark: #222, naija: green);
 // Top Toolbar
-$toolbar-md-background: color($colors, secondary);
-
+$toolbar-md-background: color($colors, naija);
 // Bottom tabs
-$tabs-md-background: color($colors, secondary);
+$tabs-md-background: color($colors, naija);
 $tabs-md-tab-color-active: color($colors, light);
 $tabs-md-tab-color:color($colors, light);
 $tabs-md-tab-text-color: color($colors, light);
-
-$list-md-background-color:color($colors, secondary);
+$list-md-background-color:color($colors, naija);
 $list-md-text-color:color($colors, light);
-
 @import "ionic.theme.default";
 @import "ionic.ionicons";
 @import "roboto";
